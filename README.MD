@@ -1,4 +1,9 @@
 
+# Updates after receiving the feedback
+In order to avoid manually injecting the scripts into html file, I decided to use two plugins:
+'html-webpack-plugin', 'html-webpack-deploy-plugin'. First one allows to inject the built code
+into html, while second injects 'react' and 'react-dom' to it so the built code would work with react libraries 
+
 # Features
 
 1. Carousel accepts one argument **looped**. If the loop property is true
