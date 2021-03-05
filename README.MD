@@ -7,6 +7,10 @@ into html, while second injects 'react' and 'react-dom' to it so the built code 
 3. Factored out progress bar to separate functional component, and made points in it resizable, 
 so it would be easier to track your progress (just check it out)
 
+# Additional notice
+1. I fixed the case when you pass only one element to the Carousel, it used to crashed because instead 
+of passing **list** of children to the Carousel, it passe only one element as an **object** 
+
 # Features
 
 1. Carousel accepts one argument **looped**. If the loop property is true
