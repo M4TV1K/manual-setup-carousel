@@ -1,8 +1,11 @@
 
 # Updates after receiving the feedback
-In order to avoid manually injecting the scripts into html file, I decided to use two plugins:
+1. In order to avoid manually injecting the scripts into html file, I decided to use two plugins:
 'html-webpack-plugin', 'html-webpack-deploy-plugin'. First one allows to inject the built code
-into html, while second injects 'react' and 'react-dom' to it so the built code would work with react libraries 
+into html, while second injects 'react' and 'react-dom' to it so the built code would work with react libraries.
+2. Added slide counter in the upper-right corner of the carousel.
+3. Factored out progress bar to separate functional component, and made points in it resizable, 
+so it would be easier to track your progress (just check it out)
 
 # Features
 
