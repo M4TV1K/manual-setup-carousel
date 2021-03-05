@@ -1,6 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import './assets/css/Carousel.css';
+import ProgressBar from "./ProgressBar";
 
 const SCROLLING_SPEED = 50;
 
@@ -136,24 +137,8 @@ const Carousel = ({ looped = false, children }) => {
     }
   };
 
-  const displayPoints = () => {
-    const points = [];
-    children.map((child, slide) => {
-      points.push(
-          <p
-              className={`progress-point ${curSlide === slide ? 'active-point' : ''}`}
-              onClick={() => scrollToSlide(slide)}
-              key={slide}
-          >
-            &bull;
-          </p>
-      );
-    });
-    return points;
-  };
-
-  const wrappedChildren = children.map((child) => {
-    return <div className='container'>{child}</div>
+  const wrappedChildren = children.map((child, index) => {
+    return <div className='container' key={index}>{child}</div>
   });
 
   return (
@@ -170,9 +155,17 @@ const Carousel = ({ looped = false, children }) => {
             <div className='nav-button' onClick={prevSlide}>&#8592;</div>
             <div className='nav-button' onClick={nextSlide}>&#8594;</div>
           </section>
-          <section className='progress-bar'>
-            { displayPoints() }
+          <section className={'slide-counter-container'}>
+            <div className='slide-counter'>
+              {(curSlide + 1) + '/' + children.length}
+            </div>
           </section>
+
+          <ProgressBar
+              amount={children.length}
+              selected={curSlide}
+              onClickPoint={scrollToSlide}
+          />
         </article>
         { looped ? wrappedChildren[wrappedChildren.length - 1] : null}
         { wrappedChildren }
