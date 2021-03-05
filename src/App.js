@@ -7,8 +7,9 @@ const App = () => {
         <Carousel looped={true}>
           <div style={{width: '90%'}}>
             <h1>Literally any HTML CONTENT</h1>
-            <p>You can wrap anything in this container 'Content'</p>
+            <p>Just add any content to the carousel and it will be wrapped automatically</p>
             <p>But it should fit the size of the carousel itself, overflow is hidden anyway</p>
+            <p>P.S. If you want one slide to contain few html tags, just write them in the container (e.g. div)</p>
           </div>
           <img
               style={{width: '100%'}}
@@ -45,7 +46,6 @@ const App = () => {
               src='https://i.imgflip.com/3bug1o.png'
               alt=''
           />
-
         </Carousel>
       </div>
   );
